@@ -98,7 +98,7 @@ const Signup = () => {
       </div>
 
       <div className="signup-footer">
-        already have an account<Link to="/login">Login here</Link>
+        Already have an account<Link to="/login">Login here</Link>
       </div>
     </div>
   );
