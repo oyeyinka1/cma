@@ -12,7 +12,7 @@ const Header = () => {
           <img src={logo} alt="" />
         </Link>
       </div>
-      <div className=" main-nav-wrapper nav-grp-links">
+      <div className="nav-grp-links">
         <Link to="/login">Login</Link>
         <Link className="get-started-btn" to="/signup">Get Started</Link>
       </div>
