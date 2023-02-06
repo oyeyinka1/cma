@@ -24,7 +24,7 @@ function App() {
           <Route path="/profile/settings" element={<Settings />} />
 
           <Route path="/add-contact" element={<AddContact />} />
-          <Route path="/contact/edit" element={<EditContact />} />
+          <Route path="/contact/edit" element={<EditContact />} />  
 
           <Route path="*" element={<NotFound />} />
         </Routes>
