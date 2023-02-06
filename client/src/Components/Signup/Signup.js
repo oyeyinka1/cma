@@ -22,10 +22,6 @@ const Signup = () => {
           </div>
 
           <div className="signup-rows">
-            <label htmlFor="firstname">First name</label>
-            <input type="text" placeholder="First name" id="firstname" />
-          </div>
-          <div className="signup-rows">
             {/* <label htmlFor="gender">Gender</label> */}
             <span>
               Gender:

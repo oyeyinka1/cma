@@ -16,6 +16,7 @@ const AddContact = () => {
             </div>
           </div>
           <div className="Page-row-2">
+            {/* --add contact starts here-- */}
             <div className="add-contact-wrapper">
               <div className="input-grp">
                 <input type="text" placeholder="first name" />
@@ -31,6 +32,7 @@ const AddContact = () => {
                 </select>
               </div>
             </div>
+            {/* --add contact ends here-- */}
           </div>
           <div className="Page-row-3">
             <div className="Page-row-3-a">

@@ -1,0 +1,15 @@
+@import url(../../assests/css/Page.css);
+.add-contact-wrapper {
+  /* border: 0.5px dashed; */
+  display: grid;
+  gap: 1rem;
+}
+.add-contact-wrapper .input-grp {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+.add-contact-wrapper .input-grp input,
+.add-contact-wrapper .input-grp select {
+  padding: 8px 12px;
+}

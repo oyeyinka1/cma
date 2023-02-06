@@ -42,42 +42,9 @@
 }
 .Page-row-2 {
 }
-.add-contact-wrapper {
-  /* border: 0.5px dashed; */
-  display: grid;
-  gap: 1rem;
-}
-.add-contact-wrapper .input-grp {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
-}
-.add-contact-wrapper .input-grp input,
-.add-contact-wrapper .input-grp select {
-  padding: 8px 12px;
-}
+/* ------------ */
+/* here */
+/* ---------------- */
 .Page-row-3 {
     align-items: center;
-}
-.Page-row-3-a a {
-  color: #2f2f2f;
-  background-color: lightgray;
-  padding: 8px 16px;
-  border-radius: 5px;
-}
-.Page-row-3-a a:hover {
-  color: #ffffff;
-  background-color: rgb(65, 65, 245);
-}
-.Page-row-3-b input {
-  color: #ffffff;
-  background-color: rgb(65, 65, 245);
-  border: none;
-   padding: 8px 16px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.Page-row-3-b input:hover {
-  color: #2f2f2f;
-  background-color: lightgray;
 }

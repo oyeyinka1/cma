@@ -1,25 +1,29 @@
-import React from "react";
-import "./Login.css";
-import { Link } from "react-router-dom";
-
+import React from 'react';
+import './Login.css'
+import { Link } from 'react-router-dom';
 const Login = () => {
   return (
     <div className="login-wrapper">
-      <div className="login-heading">login</div>
+      <div className="login-heading">Login</div>
       <div className="login-body">
         <form action="" method="post" className="login-form-wrapper">
 
           <div className="login-rows">
-            <label htmlFor="firstname">Email</label>
+            <label htmlFor="email">Email</label>
             <input type="email" placeholder="Email/username" id="email" />
           </div>
 
+        
           <div className="login-rows">
             <label htmlFor="password">Password</label>
             <input type="password" id="Password" placeholder="password" />
           </div>
-
-   
+         
+          <div className="login-rows">
+            <label htmlFor="termsAndConditions">
+              <input type="checkbox" id="termsAndConditions" />Agree to our terms and conditions
+            </label>
+          </div>
 
           <div className="login-rows">
             <button type="submit">Login</button>
@@ -27,11 +31,11 @@ const Login = () => {
         </form>
       </div>
 
-      <div className="signup-footer">
+      <div className="login-footer">
         Don't have an account?&nbsp;<Link to="/signup">Create account</Link>
       </div>
     </div>
   );
-};
+}
 
 export default Login;
