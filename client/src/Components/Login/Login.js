@@ -1,28 +1,74 @@
-import React from 'react';
-import './Login.css'
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import "./Login.css";
+import { Link, useNavigate } from "react-router-dom";
+
 const Login = () => {
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+
+  const navigate = useNavigate();
+
+  const[error, setError]= useState();
+  // const[emailerror, setEmailError]= useState();
+
+  const HandleLogin = (e) => {
+    e.preventDefault();
+    console.log("starting login---------");
+
+    //validation
+    console.log(`Email:${email}`);
+    console.log(`Password:${password}`);
+
+    // authentication
+    //fake user details provided by server
+    const userDetails = {
+      id: 2,
+      email: "michael@gmail.com",
+      password: "mike",
+    };
+
+    // if credentials match
+ if(email === userDetails.email && password === userDetails.password){
+   //redirect to profile page
+   navigate(`/profile/${userDetails.id}`);
+ }else{
+   setError('Incorrect details')
+   //if credentials dont match, redirect to login page
+   navigate(`/login`);
+  }
+  // setEmailError("Field required");
+};
+
   return (
     <div className="login-wrapper">
       <div className="login-heading">Login</div>
       <div className="login-body">
-        <form action="" method="post" className="login-form-wrapper">
-
+        <span style={{ color: "red", fontSize: "15px" }}>{error}</span>
+        <form
+          action=""
+          method="post"
+          className="login-form-wrapper"
+          onSubmit={HandleLogin}
+        >
           <div className="login-rows">
             <label htmlFor="email">Email</label>
-            <input type="email" placeholder="Email/username" id="email" />
+            <input
+              type="email"
+              placeholder="Email/username"
+              id="email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
+          {/* <span style={{ color: "red", fontSize: "15px" }}>{emailerror}</span> */}
 
-        
           <div className="login-rows">
             <label htmlFor="password">Password</label>
-            <input type="password" id="Password" placeholder="password" />
-          </div>
-         
-          <div className="login-rows">
-            <label htmlFor="termsAndConditions">
-              <input type="checkbox" id="termsAndConditions" />Agree to our terms and conditions
-            </label>
+            <input
+              type="password"
+              id="Password"
+              placeholder="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </div>
 
           <div className="login-rows">
@@ -36,6 +82,6 @@ const Login = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Login;

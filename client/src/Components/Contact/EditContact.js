@@ -38,7 +38,7 @@ const EditContact = () => {
               <Link to="/profile">Cancel</Link>
             </div>
             <div className="Page-row-3-b">
-              <input type="submit" value="Create" />
+              <input type="submit" value="Update" />
             </div>
           </div>
         </div>

@@ -1,13 +1,15 @@
-import React from 'react'
-import './ChangePassword.css'
-import { Link } from 'react-router-dom';
+import React from "react";
+import "./ChangePassword.css";
+import { Link } from "react-router-dom";
 import { FaRegArrowAltCircleLeft, FaUserLock } from "react-icons/fa";
 const ChangePassword = () => {
   return (
     <div className="page-wrapper">
       <div className="page-section">
         <div className="Page-row-1">
-          <div className="Page-row-1-a"><FaUserLock/> Change Password</div>
+          <div className="Page-row-1-a">
+            <FaUserLock /> Change Password
+          </div>
           <div className="Page-row-1-b">
             <Link to="/profile/settings">
               <FaRegArrowAltCircleLeft className="remove-padd" />
@@ -52,6 +54,6 @@ const ChangePassword = () => {
       </div>
     </div>
   );
-}
+};
 
-export default ChangePassword
+export default ChangePassword;
