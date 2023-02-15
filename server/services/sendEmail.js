@@ -1,11 +1,12 @@
 const nodemailer = require("nodemailer");
+require("dotenv").config();
 
-const sendEmail = async (email, subject, text) => {
+const sendEmail = async (email, subject, html) => {
   try {
     const transporter = nodemailer.createTransport({
       host: process.env.HOST,
       service: process.env.SERVICE,
-      port: 587,
+      port: 465,
       secure: true,
       auth: {
         user: process.env.USER,
@@ -13,13 +14,14 @@ const sendEmail = async (email, subject, text) => {
       },
     });
     await transporter.sendMail({
-      from: `CMA APPLICATION ${process.env.USER}`,
+      from: "CMA APPLICATION <process.env.USER>",
       to: email,
       subject: subject,
-      text: text,
+      html: html,
     });
     console.log("email sent sucessfully");
   } catch (error) {
     console.log(error, "email not sent");
   }
 };
+module.exports = sendEmail;
