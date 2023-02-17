@@ -21,13 +21,14 @@ app.use(
     secret: "secret key",
     resave: true,
     saveUninitialized: true,
-    cookie: {
-      maxAge: 1000 * 60 * 60 * 24 * 30, //1 month
-    },
+    // cookie: {
+    //   maxAge: 1000 * 60 * 60 * 24 * 30, //1 month
+    // }
+    // ,
     store: MongoDBStore({
       uri: process.env.MONGO_URI,
       collection: "session",
-      expires: 1000 * 60 * 60 * 24 * 30, //1 month
+      expires: 86400 * 1000, //1 day(60*60*24)
     }),
   })
 );

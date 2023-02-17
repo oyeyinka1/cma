@@ -14,16 +14,10 @@ const registerUser = async (req, res) => {
   const {
     firstName,
     lastName,
-    gender,
-    dateOfBirth,
-    country,
     state,
     city,
-    username,
     email,
-    phone,
     password,
-    photo,
   } = req.body;
 
   try {
@@ -48,16 +42,10 @@ const registerUser = async (req, res) => {
     const newUser = await UserModel.create({
       firstName,
       lastName,
-      gender,
-      dateOfBirth,
-      country,
       state,
       city,
-      username,
       email,
-      phone,
       password: hashedPassword,
-      photo,
     });
 
     //if user could not be created
@@ -178,16 +166,19 @@ const loginUser = async (req, res) => {
 
       let token = await logInToken(foundUser._id);
 
-      req.user = foundUser;
-      req.session.loggedIn = true;
-
-      res.status(200).json({
-        message: "User loggedin",
-        user: {
-          id: foundUser._id,
-          isLoggedIn: true,
-          token: token,
-        },
+      //store token in session
+      req.session.user = {
+        isLoggedIn: true,
+        token: token,
+      };
+      req.session.save((err) => {
+        if (err) {
+          console.log(err.message);
+          res.status(500).send({ message: err.message });
+        } else {
+          //send token to front-end
+          res.status(200).send(req.session.user);
+        }
       });
     } else {
       res.status(401).send({ message: "Invalid credentials" });
